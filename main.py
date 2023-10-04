@@ -1,16 +1,11 @@
-# ∆U = Q - T
 from tkinter import *
+deltaU = 0 
 
-deltaU = 0
-
-Q = float(input("Informe o valor do calor: "))
-T = float(input("Informe valor do trabalho: "))
-
-deltaU = Q - T
-
-print("A variação da enegia interna do gás é ", deltaU)
-
-janela = TK()
-
+janela = Tk()
+janela.title("Calcular variação de eneigar de um gás")
+janela.geometry("560x180")
+janela.config(bg='#52637D')
+janela.iconphoto(False,PhotoImage(file = 'logo.png'))
+janela.resizable(width=False,height=False)
 
 janela.mainloop()
