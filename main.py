@@ -13,7 +13,7 @@ def calcular_energia_interna():
         if realizado_sobre_ou_pelo.get() == "Sobre":
             trabalho = -trabalho  # Trabalho sobre o gás é negativo
 
-        energia_interna = calor + trabalho
+        energia_interna = calor - trabalho
 
         resultado_label.config(
             text=f"Energia Interna (ΔU): {energia_interna} J"
@@ -30,7 +30,7 @@ janela.title("DeltaU")
 janela.resizable(False, False)
 
 
-#####Labels e campos de entrada#####
+##### Labels e campos de entrada #####
 calor_label = tk.Label(janela, text="Calor (Q):")
 calor_label.pack()
 
@@ -59,7 +59,7 @@ cedido_radio = tk.Radiobutton(janela, text="Cedido", variable=cedido_ou_recebido
 cedido_radio.pack()
 
 ##### Opções para trabalho sobre ou pelo gás #####
-realizado_sobre_ou_pelo_label = tk.Label(janela, text="Trabalho sobre ou pelo gás:")
+realizado_sobre_ou_pelo_label = tk.Label(janela, text="Trabalho é realizado ou sobre o gás:")
 realizado_sobre_ou_pelo_label.pack()
 
 realizado_sobre_ou_pelo = tk.StringVar()
@@ -68,7 +68,7 @@ realizado_sobre_ou_pelo.set("Sobre")
 sobre_radio = tk.Radiobutton(janela, text="Sobre", variable=realizado_sobre_ou_pelo, value="Sobre")
 sobre_radio.pack()
 
-pelo_radio = tk.Radiobutton(janela, text="Pelo", variable=realizado_sobre_ou_pelo, value="Pelo")
+pelo_radio = tk.Radiobutton(janela, text="realizado", variable=realizado_sobre_ou_pelo, value="Pelo")
 pelo_radio.pack()
 
 ##### Botão de cálcular #####
